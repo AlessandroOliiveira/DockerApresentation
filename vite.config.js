@@ -1,7 +1,22 @@
+import reactRefresh from '@vitejs/plugin-react-refresh'
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [reactRefresh()],
+  build: {
+    outDir: 'build',
+    assetsDir: 'assets',
+    rollupOptions: {
+      input: {
+        main: './index.html',
+        dockerHub: 'src/pages/dockerHub/index.jsx',
+        sobre: 'src/pages/sobre/index.jsx',
+      },
+    },
+  },
+  server: {
+    port: 4050,
+  },
 })
+
+  
