@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 
 
 export const Nav = styled.nav`
+position: sticky;
     display: flex;
     background-color: #0C0C22;
     justify-content: space-between;
@@ -35,3 +36,9 @@ margin-left: 20px;
     color: #8f1414;
   }
 `;
+
+export const ImgNavbar = styled.div`
+height: 80%;
+width: 40px;
+flex-shrink: 0;
+;`

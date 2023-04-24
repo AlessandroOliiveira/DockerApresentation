@@ -26,6 +26,7 @@ export const WrapperC = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
+  gap: 1rem;
   height:${(props) => (props.firstC ? 'calc(100vh - 70px)' : '100vh')};
   padding-bottom: 100px;
 `
@@ -34,14 +35,23 @@ export const WrapperC = styled.div`
 export const ContentWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  height: 100%;
   width: 100%;
-  max-width: 1110px;
   padding: 0 2rem;
 `;
 
-export const ContainerContent = styled.div`
+export const Divider = styled.div`
+  margin: 20px;
+  width: 100%;
+`
 
+export const ContainerContent = styled.div`
+display: flex;
+flex-direction: column;
+gap: 20px;
+align-items: center;
+justify-content: center;
 `;
 
 export const TextWrapper = styled.div`
@@ -65,14 +75,11 @@ export const Description = styled.p`
   text-align: center;
   width: ${(props) => props.width};
   text-align: justify;
-  margin-bottom: 2rem;
 `;
 
 export const Code = styled.div`
   background-color: #070714;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ 
   font-size: 24px;
   border-radius: 29px;
   padding: 30px;
@@ -104,3 +111,11 @@ export const ImageWrapper = styled.div`
   flex-shrink: 0;
 `;
 
+export const ContentContainer2 = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+gap: 40px;
+
+`;

@@ -25,3 +25,9 @@ color: #D47759;
 export const CText = styled.span`
 color: #7E867E;
 `;
+
+export const PText = styled.span`
+font-weight: 700;
+color: #EB00FF;
+
+`;

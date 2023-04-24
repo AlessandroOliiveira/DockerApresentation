@@ -1,8 +1,8 @@
 import React from 'react';
-import { BodyStyle, ContainerInner, Wrapper, ContentWrapper, Description, Button, TextWrapper, Title, ImageWrapper, ButtonIcon, Code, WrapperC, ContainerContent } from '../../shared/styles/Base';
+import { BodyStyle, ContainerInner, Wrapper, ContentWrapper, Description, Button, TextWrapper, Title, ImageWrapper, ButtonIcon, Code, WrapperC, ContainerContent, Divider, ContentContainer2 } from '../../shared/styles/Base';
 import DockerLogo from '../../assets/DockerLogo.png'
 import { NavLink } from "react-router-dom"
-import { Gtext, Rtext, Ytext } from '../../shared/styles/text';
+import { Btext, CText, Gtext, Mtext, PText, Rtext, Ytext } from '../../shared/styles/text';
 
 function Home() {
 
@@ -20,6 +20,7 @@ function Home() {
                                 <Rtext> instalar</Rtext> o docker no <Gtext>Ubuntu</Gtext>, de
                                 forma <Ytext>simples</Ytext> e <Ytext>intuitiva</Ytext>"
                             </Description>
+                            <Divider />
                             <Button onClick={<NavLink to="#section_2" scrollOptions={{ behavior: 'smooth' }} />}>Get Started<ButtonIcon /></Button>
                         </TextWrapper>
                         <ImageWrapper>
@@ -34,7 +35,7 @@ function Home() {
             <ContainerInner id="section_1">
                 <WrapperC>
 
-                    <Title>First Steps</Title>
+                    <Title><Rtext>First Steps</Rtext></Title>
 
                     <ContentWrapper>
                         <ContainerContent>
@@ -45,11 +46,12 @@ function Home() {
                                 comandos:
                             </Description>
                             <Code>
-                                $ sudo apt-get update <br />
+                                <CText>$</CText> <Gtext> sudo </Gtext>apt get update
                                 <br />
-                                $ sudo apt-get install \<br />
-                                ca-certificates \<br />
-                                curl \<br />
+                                <br />
+                                <CText>$</CText> <Gtext>sudo</Gtext> apt-get <Gtext>install</Gtext> <Rtext>\</Rtext><br />
+                                ca-certificates <Rtext>\</Rtext><br />
+                                curl <Rtext>\</Rtext><br />
                                 gnupg
                             </Code>
                         </ContainerContent>
@@ -59,16 +61,16 @@ function Home() {
                                 2 - Instalar chave oficial GPG do docker
                             </Description>
                             <Code>
-                                $ sudo install -m 0755 FAFF00 /etc/apt/<br />
+                                <CText>$</CText> <Gtext>sudo install</Gtext> <Ytext>-m</Ytext> 0755 FAFF00 <Mtext>/etc/apt/</Mtext><br />
                                 keyrings<br />
                                 <br />
-                                $ curl -fsSL https://<br />
-                                download.docker.com/linux/ubuntu/gpg |<br />
-                                sudo gpg --dearmor -o /etc/apt/keyrings/<br />
-                                docker.gpg<br />
+                                <CText>$</CText> <Gtext>curl</Gtext> <Ytext>-fsSL</Ytext> <Mtext>https://<br />
+                                    download.docker.com/linux/ubuntu/gpg</Mtext> |<br />
+                                <Gtext>sudo</Gtext> gpg <Ytext>--dearmor -o</Ytext> <Mtext>/etc/apt/keyrings/<br />
+                                    docker.gpg<br /></Mtext>
                                 <br />
-                                $ sudo chmod a+r /etc/apt/keyrings/<br />
-                                docker.gpg
+                                <CText>$</CText> <Gtext>sudo chmod</Gtext> <Ytext>a+r</Ytext> <Mtext>/etc/apt/keyrings/<br />
+                                    docker.gpg</Mtext>
                             </Code>
                         </ContainerContent>
 
@@ -79,26 +81,99 @@ function Home() {
                             3 - Definir o Repositorio
                         </Description>
                         <Code>
-                            $ echo \<br />
-                            "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://<br />
-                            download.docker.com/linux/ubuntu \<br />
-                            <br />
-                            "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \<br />
-                            $sudo tee /etc/apt/sources.list.d/docker.list {">"} /dev/null<br />
+                            <CText>$</CText> <Gtext>echo</Gtext> <Rtext>\<br />
+                                "deb [arch="$(</Rtext>dpkg <Ytext>--print-architecture</Ytext><Rtext>)" signed-by=/etc/apt/keyrings/docker.gpg] https://<br />
+                                download.docker.com/linux/ubuntu \"$(</Rtext><Gtext>.</Gtext> <Mtext>/etc/os-release </Mtext> && <Gtext>echo</Gtext> <Rtext>"</Rtext><Btext>$VERSION_CODENAME</Btext><Rtext>")" stable" </Rtext>| <Rtext> \</Rtext><br />
+                            <Gtext>sudo tee</Gtext> <Mtext>/etc/apt/sources.list.d/docker.list</Mtext> {">"} /dev/null<br />
 
                         </Code>
                     </ContainerContent>
                     <Button>Next</Button>
                 </WrapperC>
             </ContainerInner>
+            <Divider />
             <ContainerInner id="section_2">
-                teste
+                <WrapperC>
+                    <Title><Gtext>Installing Docker</Gtext></Title>
+                    <ContainerContent>
+                        <Description>1 - Atualizar os pacotes <br /> do indexDescription</Description>
+                        <Code>
+                            <CText>$</CText> <Gtext> sudo </Gtext>apt get update
+                        </Code>
+                    </ContainerContent>
+                    <ContainerContent>
+                        <Description>2 - Instalar chave oficial GPG do docker</Description>
+                        <Code>
+                            <CText>$</CText> <Gtext>sudo</Gtext> apt-get <Gtext>install </Gtext>
+                            <Mtext>
+                                docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+                            </Mtext>
+                        </Code>
+                    </ContainerContent>
+                    <ContainerContent>
+                        <Description>3 - verifique a instalação com esse comando:</Description>
+                        <Code>
+                            <CText>$</CText> <Gtext>sudo</Gtext> <Btext>docker</Btext> <Gtext>run</Gtext> hello-world
+                        </Code>
+                    </ContainerContent>
+                    <Button>Next</Button>
+                </WrapperC>
             </ContainerInner>
+            <Divider />
             <ContainerInner id="section_3">
-                teste
+                <WrapperC>
+                    <Title><PText>Post Installation</PText></Title>
+                    <>Agora e necessario fazer com que o docker possa ser rodado por um usuario comum</>
+                    <ContentWrapper>
+
+                        <ContainerContent>
+                            <Description>1 - Crie um grupo para o docker</Description>
+                            <Code>
+                                <CText>$</CText> <Gtext> sudo </Gtext>groupadd <Btext>docker</Btext>
+
+                            </Code>
+                        </ContainerContent>
+                        <ContainerContent>
+                            <Description>2 - adicione o ser usuario no grupo do docker</Description>
+                            <Code>
+                                <CText>$</CText> <Gtext>sudo</Gtext> usermod <Ytext>-aG</Ytext> <Btext>docker</Btext> <Rtext>$USER</Rtext>
+                            </Code>
+                        </ContainerContent>
+                    </ContentWrapper>
+                    <ContainerContent>
+                        <Description>3 -  Ative as configurações</Description>
+                        <Code>
+                            <CText>$</CText> <Gtext>newgrp</Gtext> <Btext>docker</Btext>
+                        </Code>
+                    </ContainerContent>
+                    <Button>Next</Button>
+                </WrapperC>
             </ContainerInner>
+            <Divider />
             <ContainerInner id="section_4">
-                teste
+                <ContentWrapper>
+                    <ImageWrapper>
+                        <img src={DockerLogo} alt="dockerlogo" />
+                    </ImageWrapper>
+                    <ContentContainer2>
+                        <ContainerContent>
+                            <Description>Agora é só testar</Description>
+                            <Code>
+                                <Btext>docker</Btext> <Gtext>run</Gtext> hello-world
+                            </Code>
+                        </ContainerContent>
+
+                        <ContainerContent>
+                            <Description>Para mais indormações</Description>
+                        </ContainerContent>
+
+                        <ContainerContent>
+                            <Description>Veja Tambem sobre o Docker Hub</Description>
+                        </ContainerContent>
+
+                        <Button>Docker Hub</Button>
+                    </ContentContainer2>
+                </ContentWrapper>
             </ContainerInner>
         </BodyStyle >
 
