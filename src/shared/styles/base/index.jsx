@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { NavLink, Link } from "react-router-dom";
 
 export const BodyStyle = styled.div`
 padding: 0;
@@ -100,10 +100,11 @@ export const Button = styled.button`
   }
 `;
 
-export const ButtonIcon = styled.span`
+export const ButtonIcon = styled.img`
   width: 24px;
   height: 24px;
-  margin-right: 8px;
+
+margin-right: 8px;
 `;
 
 
@@ -117,5 +118,43 @@ flex-direction: column;
 align-items: center;
 justify-content: space-between;
 gap: 40px;
+
+`;
+
+export const NavButton = styled(NavLink)`
+font-size: 1.6rem;
+  padding: 1rem 2rem;
+  width: 380px;
+  background: #5379FF;
+  border-radius: 37px;
+  text-align: center;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #3861f8;
+  }
+
+`;
+
+export const LinkButton = styled(Link)`
+font-size: 1.6rem;
+  padding: 1rem 2rem;
+  width: 380px;
+  background: #5379FF;
+  border-radius: 37px;
+  text-align: center;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #3861f8;
+  }
 
 `;

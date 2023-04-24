@@ -28,7 +28,7 @@ function NavBar() {
     return (
         <Nav ref={navbarRef}>
             <Logo to="/">Logoo</Logo>
-            <ImgNavbar src={DockerLogo} alt="dockerlogo" />
+            <ImgNavbar src={DockerLogo} />
 
             <Menu>
                 <MenuItem to="/" exact activeClassName="active">Home</MenuItem>
