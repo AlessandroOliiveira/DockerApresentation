@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
-
+import Inter from '../../../assets/fonts/Inter.ttf'
 const GlobalStyle = createGlobalStyle`
   ${reset}
   *{
@@ -10,6 +10,14 @@ const GlobalStyle = createGlobalStyle`
     background-color: #101026;
 
 }
+
+@font-face {
+  font-family: 'Inter';
+  src:url(${Inter}) format('truetype');
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
 `;
 export default GlobalStyle;
-  

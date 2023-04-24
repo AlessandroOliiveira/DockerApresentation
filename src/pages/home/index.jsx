@@ -2,6 +2,7 @@ import React from 'react';
 import { BodyStyle, ContainerInner, Wrapper, ContentWrapper, Description, Button, TextWrapper, Title, ImageWrapper, ButtonIcon, Code, WrapperC, ContainerContent } from '../../shared/styles/Base';
 import DockerLogo from '../../assets/DockerLogo.png'
 import { NavLink } from "react-router-dom"
+import { Gtext, Rtext, Ytext } from '../../shared/styles/text';
 
 function Home() {
 
@@ -13,11 +14,11 @@ function Home() {
                 <Wrapper firstC>
                     <ContentWrapper >
                         <TextWrapper>
-                            <Title>Welcome</Title>
-                            <Description>
-                                Aqui você irá aprender a como <br />
-                                instalar o docker no Ubuntu, de <br />
-                                forma simples e intuitiva
+                            <Title><Ytext>Welcome</Ytext></Title>
+                            <Description width="380px">
+                                <Gtext>Aqui</Gtext> você irá <Rtext>aprender</Rtext> a como
+                                <Rtext> instalar</Rtext> o docker no <Gtext>Ubuntu</Gtext>, de
+                                forma <Ytext>simples</Ytext> e <Ytext>intuitiva</Ytext>"
                             </Description>
                             <Button onClick={<NavLink to="#section_2" scrollOptions={{ behavior: 'smooth' }} />}>Get Started<ButtonIcon /></Button>
                         </TextWrapper>
@@ -58,20 +59,36 @@ function Home() {
                                 2 - Instalar chave oficial GPG do docker
                             </Description>
                             <Code>
-                                $ sudo install -m 0755 FAFF00 /etc/apt/keyrings<br />
+                                $ sudo install -m 0755 FAFF00 /etc/apt/<br />
+                                keyrings<br />
                                 <br />
-                                $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg |<br />
-                                sudo gpg --dearmor -o /etc/apt/keyrings/
+                                $ curl -fsSL https://<br />
+                                download.docker.com/linux/ubuntu/gpg |<br />
+                                sudo gpg --dearmor -o /etc/apt/keyrings/<br />
                                 docker.gpg<br />
                                 <br />
-                                $ sudo chmod a+r /etc/apt/keyrings/docker.gpg
+                                $ sudo chmod a+r /etc/apt/keyrings/<br />
+                                docker.gpg
                             </Code>
                         </ContainerContent>
+
                     </ContentWrapper>
                     <ContainerContent>
-                        teste
+
+                        <Description>
+                            3 - Definir o Repositorio
+                        </Description>
+                        <Code>
+                            $ echo \<br />
+                            "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://<br />
+                            download.docker.com/linux/ubuntu \<br />
+                            <br />
+                            "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \<br />
+                            $sudo tee /etc/apt/sources.list.d/docker.list {">"} /dev/null<br />
+
+                        </Code>
                     </ContainerContent>
-                    <Button></Button>
+                    <Button>Next</Button>
                 </WrapperC>
             </ContainerInner>
             <ContainerInner id="section_2">

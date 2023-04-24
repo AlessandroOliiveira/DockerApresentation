@@ -58,7 +58,13 @@ export const Title = styled.h1`
 
 
 export const Description = styled.p`
-  font-size: 1.6rem;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29.05px;
+  padding: 2px;
+  text-align: center;
+  width: ${(props) => props.width};
+  text-align: justify;
   margin-bottom: 2rem;
 `;
 
@@ -69,21 +75,21 @@ export const Code = styled.div`
   justify-content: center;
   font-size: 24px;
   border-radius: 29px;
-  width: 400px;
   padding: 30px;
 `;
 export const Button = styled.button`
   font-size: 1.6rem;
   padding: 1rem 2rem;
-  border-radius: 20px;
+  width: 380px;
+  background: #5379FF;
+  border-radius: 37px;
   border: none;
-  background-color: #007cff;
   color: #ffffff;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background-color: #0066d9;
+    background-color: #3861f8;
   }
 `;
 
