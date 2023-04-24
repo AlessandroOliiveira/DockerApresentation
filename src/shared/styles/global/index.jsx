@@ -19,5 +19,15 @@ const GlobalStyle = createGlobalStyle`
 body {
   font-family: 'Inter', sans-serif;
 }
+
+
+.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
 `;
 export default GlobalStyle;
