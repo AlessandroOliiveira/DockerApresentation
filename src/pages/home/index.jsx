@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { BodyStyle, ContainerInner, Wrapper, ContentWrapper, Description, Button, TextWrapper, Title, ImageWrapper, ButtonIcon, Code, WrapperC, ContainerContent, Divider, ContentContainer2, NavButton } from '../../shared/styles/Base';
 import DockerLogo from '../../assets/DockerLogo.png'
-import DockerHub from '../../assets/DockerHub.png'
 import DockerHubL from '../../assets/DockerHubL.png'
 import ArrowDown from '../../assets/ArrowDown.png'
 import ArrowRight from '../../assets/ArrowRight.png'
@@ -200,7 +199,7 @@ function Home() {
                             <Description>Veja Tambem sobre o Docker Hub</Description>
                         </ContainerContent>
 
-                        <NavButton > <Link to="https://docs.docker.com/docker-hub/">Docker Hub</Link> </NavButton>
+                        <NavButton to="https://docs.docker.com/docker-hub/">  Docker Hub</NavButton>
                     </ContentContainer2>
                 </ContentWrapper>
             </ContainerInner>
