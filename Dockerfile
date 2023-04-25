@@ -1,5 +1,5 @@
 # Define a imagem base
-FROM node:latest
+FROM node:16
 
 # Define o diretório de trabalho
 WORKDIR /app
@@ -25,4 +25,4 @@ RUN yarn build
 EXPOSE 4050
 
 # Comando para iniciar a aplicação
-CMD [ "yarn", "start" ]
+CMD [ "yarn", "dev" ]
