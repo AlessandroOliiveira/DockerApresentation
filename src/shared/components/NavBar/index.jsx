@@ -27,7 +27,7 @@ function NavBar() {
 
     return (
         <Nav ref={navbarRef}>
-            <Logo to="/">Logoo</Logo>
+            <Logo to="/">DKR</Logo>
             <ImgNavbar src={DockerLogo} />
 
             <Menu>

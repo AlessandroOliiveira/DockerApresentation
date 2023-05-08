@@ -10,26 +10,26 @@ import { Btext, CText, Gtext, Mtext, PText, Rtext, Ytext } from '../../shared/st
 
 function Home() {
 
-    const secao1Ref = useRef(null);
-    const secao2Ref = useRef(null);
-    const secao3Ref = useRef(null);
-    const secao4Ref = useRef(null);
+    const secao5Ref = useRef(null);
+    const secao6Ref = useRef(null);
+    const secao7Ref = useRef(null);
+    const secao8Ref = useRef(null);
 
-    const handleClickSecao1 = () => {
-        secao1Ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const handleClickSecao5 = () => {
+        secao5Ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
         window.scrollBy(0, -160);
     };
 
-    const handleClickSecao2 = () => {
-        secao2Ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const handleClickSecao6 = () => {
+        secao6Ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
         window.scrollBy(0, -80);
     };
-    const handleClickSecao3 = () => {
-        secao3Ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const handleClickSecao7 = () => {
+        secao7Ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
         window.scrollBy(0, -80);
     };
-    const handleClickSecao4 = () => {
-        secao4Ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const handleClickSecao8 = () => {
+        secao8Ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
         window.scrollBy(0, -80);
     };
 
@@ -49,7 +49,7 @@ function Home() {
                                 forma <Ytext>simples</Ytext> e <Ytext>intuitiva</Ytext>"
                             </Description>
                             <Divider />
-                            <Button onClick={handleClickSecao1}>Get Started<ButtonIcon src={ArrowDown} /></Button>
+                            <Button onClick={handleClickSecao5}>Get Started</Button>
                         </TextWrapper>
                         <ImageWrapper>
                             <img src={DockerLogo} alt="dockerlogo" />
@@ -60,7 +60,7 @@ function Home() {
 
             </ContainerInner>
 
-            <ContainerInner ref={secao1Ref}>
+            <ContainerInner ref={secao5Ref}>
                 <WrapperC>
 
                     <Title><Rtext>First Steps</Rtext></Title>
@@ -116,11 +116,11 @@ function Home() {
 
                         </Code>
                     </ContainerContent>
-                    <Button onClick={handleClickSecao2}>Next <ButtonIcon src={ArrowDown} /></Button>
+                    <Button onClick={handleClickSecao6}>Next </Button>
                 </WrapperC>
             </ContainerInner>
             <Divider />
-            <ContainerInner ref={secao2Ref}>
+            <ContainerInner ref={secao6Ref}>
                 <WrapperC>
                     <Title><Gtext>Installing Docker</Gtext></Title>
                     <ContainerContent>
@@ -144,11 +144,11 @@ function Home() {
                             <CText>$</CText> <Gtext>sudo</Gtext> <Btext>docker</Btext> <Gtext>run</Gtext> hello-world
                         </Code>
                     </ContainerContent>
-                    <Button onClick={handleClickSecao3}>Next</Button>
+                    <Button onClick={handleClickSecao7}>Next</Button>
                 </WrapperC>
             </ContainerInner>
             <Divider />
-            <ContainerInner ref={secao3Ref}>
+            <ContainerInner ref={secao7Ref}>
                 <WrapperC>
                     <Title><PText>Post Installation</PText></Title>
                     <>Agora e necessario fazer com que o docker possa ser rodado por um usuario comum</>
@@ -174,11 +174,11 @@ function Home() {
                             <CText>$</CText> <Gtext>newgrp</Gtext> <Btext>docker</Btext>
                         </Code>
                     </ContainerContent>
-                    <Button onClick={handleClickSecao4}>Next</Button>
+                    <Button onClick={handleClickSecao8}>Next</Button>
                 </WrapperC>
             </ContainerInner>
             <Divider />
-            <ContainerInner ref={secao4Ref}>
+            <ContainerInner ref={secao8Ref}>
                 <ContentWrapper>
                     <ImageWrapper>
                         <img src={DockerLogo} alt="dockerlogo" />
@@ -199,7 +199,7 @@ function Home() {
                             <Description>Veja Tambem sobre o Docker Hub</Description>
                         </ContainerContent>
 
-                        <NavButton to="https://docs.docker.com/docker-hub/">  Docker Hub</NavButton>
+                        <NavButton to="/dockerhub">  Docker Hub</NavButton>
                     </ContentContainer2>
                 </ContentWrapper>
             </ContainerInner>
