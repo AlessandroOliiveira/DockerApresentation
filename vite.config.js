@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [reactRefresh()],
   build: {
-    outDir: 'build',
+    outDir: 'dist', 
     assetsDir: 'assets',
     rollupOptions: {
       input: {
